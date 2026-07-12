@@ -1,0 +1,13 @@
+[gd_resource type="Resource" format=3 uid="uid://6qhf2mwivv8x"]
+
+[ext_resource type="Script" uid="uid://ch1y27kcotxr" path="res://Scripts/MobileControlResource.gd" id="1_ltqn4"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_bimmo"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_u04rc"]
+
+[resource]
+script = ExtResource("1_ltqn4")
+left_arrow_texture = SubResource("PlaceholderTexture2D_bimmo")
+right_arrow_texture = SubResource("PlaceholderTexture2D_u04rc")
+button_scale = Vector2(100, 100)

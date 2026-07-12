@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://dxixiespknqgx"]
+
+[ext_resource type="Script" uid="uid://bnkwsy12nt7le" path="res://Scripts/bullet.gd" id="1_vkapq"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_v8qja"]
+radius = 0.2
+height = 0.45
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_t4vbm"]
+radius = 0.60403734
+
+[node name="Bullet" type="Area3D" unique_id=1749052346]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_vkapq")
+bullet_speed = 100.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1023485331]
+mesh = SubResource("SphereMesh_v8qja")
+
+[node name="BulletSweeper" type="CollisionShape3D" parent="." unique_id=421342308]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
+top_level = true
+shape = SubResource("SphereShape3D_t4vbm")
+
+[node name="LaserRadar" type="RayCast3D" parent="." unique_id=529193086]
+target_position = Vector3(0, 0, -2)
+collision_mask = 2
+hit_from_inside = true
+collide_with_areas = true

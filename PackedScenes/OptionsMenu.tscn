@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://biasmtmbhheg6"]
+
+[ext_resource type="Script" uid="uid://btpstixwrsvko" path="res://Scripts/OptionsMenu.gd" id="1_61rvo"]
+
+[node name="OptionsMenu" type="Control" unique_id=866555161]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_61rvo")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=774245345]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=219738772]
+layout_mode = 2
+
+[node name="TitleLaber" type="Label" parent="PanelContainer/VBoxContainer" unique_id=57382250]
+layout_mode = 2
+text = "Settings
+"
+
+[node name="ControlToggleButton" type="Button" parent="PanelContainer/VBoxContainer" unique_id=1698678689]
+layout_mode = 2
+text = "Arrows"
+
+[node name="BackButton" type="Button" parent="PanelContainer/VBoxContainer" unique_id=1485546125]
+layout_mode = 2
+text = "Back"

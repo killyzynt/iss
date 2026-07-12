@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://cdl17kw8e4ddm"]
+
+[ext_resource type="Script" uid="uid://3efy6brnkirm" path="res://Scripts/main_menu.gd" id="1_06t4h"]
+[ext_resource type="PackedScene" uid="uid://biasmtmbhheg6" path="res://PackedScenes/OptionsMenu.tscn" id="2_gtxs6"]
+
+[node name="MainMenu" type="Control" unique_id=31554401]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_06t4h")
+gameplay_scene_path = "uid://n4iskkqv3fxx"
+
+[node name="Background" type="ColorRect" parent="." unique_id=1374339237]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.14044744, 0.14044744, 0.14044744, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1227277756]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -67.5
+offset_top = -275.0
+offset_right = 67.5
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=1693951305]
+layout_mode = 2
+text = "Glass Shooter
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StartButton" type="Button" parent="VBoxContainer" unique_id=248197351]
+layout_mode = 2
+text = "Start New Game"
+
+[node name="ContinueButton" type="Button" parent="VBoxContainer" unique_id=1251142258]
+layout_mode = 2
+text = "Continue"
+
+[node name="OptionsMenu" parent="VBoxContainer" unique_id=866555161 instance=ExtResource("2_gtxs6")]
+layout_mode = 2
+
+[node name="ExitButton" type="Button" parent="VBoxContainer" unique_id=1856155842]
+layout_mode = 2
+text = "Exit Game"

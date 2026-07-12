@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ObstacleMaterialDefinition" format=3 uid="uid://crjcg25ojgp4w"]
+
+[ext_resource type="Script" path="res://obstacle_material_definition.gd" id="1_ivq1k"]
+[ext_resource type="PackedScene" uid="uid://cixjsq38gur2r" path="res://PackedScenes/red_glass_block.tscn" id="1_rhcs1"]
+
+[resource]
+script = ExtResource("1_ivq1k")
+block_scene_file = ExtResource("1_rhcs1")
+metadata/_custom_type_script = "uid://5w6dbh2rlm68"

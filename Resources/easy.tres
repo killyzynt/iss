@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="WaveBlockConfig" format=3 uid="uid://b0820883lu6x6"]
+
+[ext_resource type="Script" uid="uid://wld4wqmvxlt4" path="res://Scripts/WaveBlockConfig.gd" id="1_c2cjx"]
+[ext_resource type="PackedScene" uid="uid://cy8ruytg47y4s" path="res://PackedScenes/blue_glass_block.tscn" id="1_va4bu"]
+
+[resource]
+script = ExtResource("1_c2cjx")
+block_scene = ExtResource("1_va4bu")
+count_to_spawn = 7
+metadata/_custom_type_script = "uid://wld4wqmvxlt4"

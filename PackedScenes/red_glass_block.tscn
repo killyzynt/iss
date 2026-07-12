@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://cixjsq38gur2r"]
+
+[ext_resource type="Script" uid="uid://bk27vntno1xwu" path="res://Scripts/glass_block.gd" id="1_c22g3"]
+[ext_resource type="Script" uid="uid://bb27pyyjpndvg" path="res://Scripts/glass_block_effects.gd" id="1_pbdr1"]
+[ext_resource type="PackedScene" uid="uid://b4dk2bwt2jaoa" path="res://PackedScenes/GlassShards.tscn" id="2_68338"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sl1jc"]
+size = Vector3(1.506, 2.007, 0.24679688)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o2178"]
+albedo_color = Color(1, 0.18, 0.18, 1)
+metallic = 0.35
+metallic_specular = 0.67
+roughness = 0.4
+
+[sub_resource type="BoxMesh" id="BoxMesh_d5upp"]
+material = SubResource("StandardMaterial3D_o2178")
+size = Vector3(1.5, 2, 0.2)
+
+[node name="RedGlassBlock" type="Area3D" unique_id=20361432]
+collision_layer = 7
+collision_mask = 7
+script = ExtResource("1_c22g3")
+
+[node name="GlassBlockEffects" type="Node" parent="." unique_id=1453251792]
+script = ExtResource("1_pbdr1")
+destruction_shards_pool = Array[PackedScene]([ExtResource("2_68338")])
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1939896388]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0016015619)
+shape = SubResource("BoxShape3D_sl1jc")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1258624098]
+layers = 3
+mesh = SubResource("BoxMesh_d5upp")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ObstacleSpawnConfig" format=3 uid="uid://wyku84vmy51r"]
+
+[ext_resource type="Script" path="res://obstacle_spawn_config.gd" id="1_nxjss"]
+[ext_resource type="Resource" uid="uid://crjcg25ojgp4w" path="res://Resources/glass_material.tres" id="2_y4imt"]
+
+[resource]
+script = ExtResource("1_nxjss")
+target_material = ExtResource("2_y4imt")
+metadata/_custom_type_script = "uid://bhaaadeqrejdu"

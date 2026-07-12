@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="WaveBlueprint" format=3 uid="uid://cefkd5k01fjx"]
+
+[ext_resource type="Resource" uid="uid://wyku84vmy51r" path="res://Resources/glass_red_slim.tres" id="1_4ff64"]
+[ext_resource type="Script" uid="uid://m55g6jrnyq1i" path="res://Scripts/wave_blueprint.gd" id="1_o37ck"]
+
+[resource]
+script = ExtResource("1_o37ck")
+allowed_obstacle_pools = Array[Resource]([ExtResource("1_4ff64")])
+metadata/_custom_type_script = "uid://m55g6jrnyq1i"

@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://b4dk2bwt2jaoa"]
+
+[ext_resource type="Script" uid="uid://chdjhnrnl0wm1" path="res://Scripts/glass_shards.gd" id="1_tgfhk"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6dryp"]
+albedo_color = Color(1, 0.09985284, 0, 1)
+
+[sub_resource type="PrismMesh" id="PrismMesh_ph2wb"]
+material = SubResource("StandardMaterial3D_6dryp")
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_urtq7"]
+height = 0.5
+radius = 0.2
+
+[node name="GlassShards" type="Area3D" unique_id=553535883 groups=["shards"]]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_tgfhk")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1247148949]
+transform = Transform3D(0.43116885, 0, 0, 0, 0.51231027, 0, 0, 0, 0.441876, 0, 0, 0)
+mesh = SubResource("PrismMesh_ph2wb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=990983808]
+shape = SubResource("CylinderShape3D_urtq7")
+debug_color = Color(0.9749157, 0, 0.4270611, 0.41960785)

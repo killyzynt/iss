@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="WaveBlueprint" format=3 uid="uid://sy0e11uojw80"]
+
+[ext_resource type="Script" uid="uid://wld4wqmvxlt4" path="res://Scripts/WaveBlockConfig.gd" id="1_egjqn"]
+[ext_resource type="Script" uid="uid://m55g6jrnyq1i" path="res://Scripts/wave_blueprint.gd" id="1_ndawc"]
+[ext_resource type="Resource" uid="uid://b0820883lu6x6" path="res://Resources/easy.tres" id="2_ire2m"]
+
+[resource]
+script = ExtResource("1_ndawc")
+wave_name = "1"
+total_blocks_to_spawn = 7
+blocks_to_spawn_pool = Array[ExtResource("1_egjqn")]([ExtResource("2_ire2m")])
+universal_health_multiplier = 0.1
+metadata/_custom_type_script = "uid://m55g6jrnyq1i"

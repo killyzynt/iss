@@ -1,0 +1,27 @@
+name: "Free Unsigned iOS Export"
+on: [push, workflow_dispatch]
+
+jobs:
+  build-ios:
+    runs-on: macos-latest # Uses GitHub's free Mac minutes
+    steps:
+      - name: Checkout Source Code
+        uses: actions/checkout@v4
+
+      - name: Export Xcode Project via Godot
+        uses: dulvui/godot4-ios-export@v1
+        with:
+          godot-version: 4.6.3.stable # Match your exact version
+
+      - name: Compress Unsigned App Directory
+        run: |
+          # Compress the folder instead of building a restricted .ipa
+          mkdir -p build
+          mv ios/ build/
+          zip -r ios_xcode_project.zip build/
+
+      - name: Upload Exported Files to GitHub
+        uses: actions/upload-artifact@v4
+        with:
+          name: godot-ios-project
+          path: ios_xcode_project.zip

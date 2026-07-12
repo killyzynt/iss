@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://c78ogj4icdqk5"]
+
+[ext_resource type="Script" uid="uid://dj5mg7viq8p2n" path="res://Scripts/gameplay_hud.gd" id="1_sk8qr"]
+
+[node name="GameplayHUD" type="Control" unique_id=204812784]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_sk8qr")
+
+[node name="MobilePauseButton" type="Button" parent="." unique_id=942351939]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -59.0
+offset_bottom = 31.0
+grow_horizontal = 0
+text = "PAUSE"
+
+[node name="FPSLabel" type="Label" parent="." unique_id=1919405093]
+layout_mode = 1
+offset_right = 70.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 16
+clip_text = true
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=2030527874]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 180
+
+[node name="ScoreLabel" type="Label" parent="MarginContainer" unique_id=841814966]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
