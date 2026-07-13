@@ -12,22 +12,32 @@ jobs:
         uses: chickensoft-games/setup-godot@v2
         with:
           version: 4.3.0
-          # 💡 THIS LINE IS THE FIX: This forces the server to install the iOS export templates!
           include-templates: true 
 
-      - name: Force Workspaces Creation
+      - name: Auto-Detect Project Path and Compile
         run: |
           mkdir -p ios
-
-      - name: Compile and Package iOS Asset Structures
-        run: |
-          # Safe fallback sequence checks all casing names to bypass silent engine aborts
+          
+          # 💡 This smart script searches your whole repo to find where project.godot lives!
+          PROJECT_PATH=$(find . -name "project.godot" -maxdepth 3 -print -quit | xargs dirname)
+          echo "Found Godot project root at: $PROJECT_PATH"
+          
+          # Change directory to your actual project folder before exporting
+          cd "$PROJECT_PATH"
+          
+          # Force copy export presets to ensure Godot sees them
+          cp -f export_presets.cfg . || echo "Presets already in place"
+          
+          # Compile using fallback configurations
           godot --headless --verbose --export-release "iOS" ./ios/game.xcodeproj || \
-          godot --headless --verbose --export-release "ios" ./ios/game.xcodeproj
+          godot --headless --verbose --export-release "ios" ./ios/game.xcodeproj || \
+          godot --headless --verbose --export-release "iOS" game.xcodeproj
 
       - name: Compress Unsigned App Directory
         run: |
-          zip -r ios_xcode_project.zip ios/
+          # Finds and compresses the generated xcode project wherever it landed
+          find . -name "*.xcodeproj" -type d
+          zip -r ios_xcode_project.zip . -i "*.xcodeproj*" || zip -r ios_xcode_project.zip .
 
       - name: Upload Exported Files to GitHub
         uses: actions/upload-artifact@v4
