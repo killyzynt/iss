@@ -11,7 +11,7 @@ jobs:
       - name: Setup Godot Engine Environment
         uses: chickensoft-games/setup-godot@v2
         with:
-          version: 4.6.3.stable # Make sure this matches your local version exactly!
+          version: 4.3.0 # Make sure this matches your local version exactly!
 
       - name: Force Workspaces Creation
         run: |
