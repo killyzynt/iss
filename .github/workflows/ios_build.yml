@@ -11,7 +11,9 @@ jobs:
       - name: Setup Godot Engine Environment
         uses: chickensoft-games/setup-godot@v2
         with:
-          version: 4.3.0 # Make sure this matches your local version exactly!
+          version: 4.3.0
+          # 💡 THIS LINE IS THE FIX: This forces the server to install the iOS export templates!
+          include-templates: true 
 
       - name: Force Workspaces Creation
         run: |
@@ -19,7 +21,9 @@ jobs:
 
       - name: Compile and Package iOS Asset Structures
         run: |
-          godot --headless --verbose --export-release "iOS" ./iOS/game.xcodeproj
+          # Safe fallback sequence checks all casing names to bypass silent engine aborts
+          godot --headless --verbose --export-release "iOS" ./ios/game.xcodeproj || \
+          godot --headless --verbose --export-release "ios" ./ios/game.xcodeproj
 
       - name: Compress Unsigned App Directory
         run: |
